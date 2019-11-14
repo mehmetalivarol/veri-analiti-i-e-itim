@@ -1,12 +1,14 @@
 
-# Linktera Veri Analitiği Eğitim ------------------------------------------
+# Linktera Veri Analitigi Egitim ------------------------------------------
 # Market Basket Analysis --------------------------------------------------
 # Groceries Data Exercise -------------------------------------------------
 
 options(digits = 4)
 
 # Install and Load Packages -----------------------------------------------
-
+install.packages("arules")
+install.packages("arulesviz")
+install.packages("RColorBrewer")
 library(arules)
 library(arulesViz)
 library(RColorBrewer)
@@ -22,7 +24,7 @@ rules <-
 
 # inspect the rules -------------------------------------------------------
 
-inspect(head(sort(rules, by = "support"), 50))
+inspect(head(sort(rules, by = "support"), 10))
 inspect(head(sort(rules, by = "confidence"), 10))
 inspect(head(sort(rules, by = "lift"), 10))
 
@@ -62,7 +64,7 @@ plot(
 
 # plot rules as scatter plot ----------------------------------------------
 
-plot(head(sort(rules, by = "support"), 10), jitter = 10, engine = "plotly")
+plot(head(sort(rules, by = "support"), 100), jitter = 10, engine = "plotly")
 
 # plot rules as paracoord -------------------------------------------------
 
